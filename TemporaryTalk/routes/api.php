@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', function () {
+    return [
+        'result' => true,
+    ];
+});
+
+Route::get('/meetings', 'Zoom\MeetingController@list');
+
+// Create meeting room using topic, agenda, start_time.
+Route::post('/meetings', 'Zoom\MeetingController@create');
