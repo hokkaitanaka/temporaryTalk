@@ -18,7 +18,7 @@
     .dropdown{
       margin-left: 340px;
     }
-    .container{
+    a {
       margin-bottom: 100px;
     }
     .text-button {
@@ -29,32 +29,17 @@
       border: 1px solid #232323;
       padding: 10px;
     }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     </style>
   </head>
   <body>
-  <div class="container">
-      <div class="column">
-        <div class="row">
-          <div class="home"><a href="{{ url('/') }}">ランダムトーク</a></div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              menu
-            </button>
-            
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button type="button" onclick="location.href='/add'">フレンド追加</button>
-              <button type="button" onclick="location.href='/list'">フレンドリスト</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
+    <a href="{{ url('/home') }}">ランダムトーク</a>
 
-    <?php 
-    
-     //$value = session()->get('email');
-     //echo $value;
-    ?>
     <?php
     $csrf = csrf_field();
     $csrf = "'" . $csrf . "'";
@@ -65,7 +50,7 @@
       var csrf = <?php echo $csrf; ?>;
       document.write( '<div class="row">' +
                         '<div class="col">' +
-                          '<form action="{{ url('/call')}}" method="POST" class="form-horizontal">' +
+                          '<form action="{{ url('/mypage')}}" method="POST" class="form-horizontal">' +
                             csrf);
       if(user[0]['is_wanting'] === 0){
               document.write('<input type="hidden" name="wanting" value="wanting">' +

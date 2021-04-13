@@ -26,15 +26,14 @@
       .register{
         margin-left: 350px;
       }
-
       .login{
         margin: 0 0 0 auto;
       }
-
       p{
         width : 600px ;
         margin-left: auto;
         margin-right: auto;
+        color:red;
       }
       
       body {
@@ -48,11 +47,11 @@
     <div class="container">
       <div class="column">
         <div class="row">
-          <div class="home"><a href="{{ url('/') }}">Temporary Talk</a></div>
+          <div class="home"><a href="{{ url('/home') }}">ランダムトーク</a></div>
         </div>
       </div>
     </div>
-
+    <p>このメールアドレスは既に登録されています。</p>
     <form action="{{ url('/register')}}" method="POST" class="form-horizontal">
       @csrf
       <div class="form-group">

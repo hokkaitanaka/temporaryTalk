@@ -12,18 +12,36 @@ class LoginController extends Controller
 {
     public function register()
     {
+        if (session()->has('id')) {
+            $id = session()->get('id');
+                
+            $user = DB::table('users')
+            ->where('id', $id)
+            ->get();
+
+            return view('mypage', ['user' => $user,],);
+        }
+
         return view('register');
     }
     
     public function login()
     {
+        if (session()->has('id')) {
+            $id = session()->get('id');
+                
+            $user = DB::table('users')
+            ->where('id', $id)
+            ->get();
+
+            return view('mypage', ['user' => $user,],);
+        }
+        
         return view('login');
     }
 
     public function postRegister(Request $request)
     {
-        $registerId = Str::random(8);
-
         $name = $request->name;
         $email = $request->email;
         $password = $request->password;
@@ -41,12 +59,19 @@ class LoginController extends Controller
             'name' => $name,
             'email' => $email,
             'password' => $password,
-            'register_id' => $registerId,
             'is_wanting' => false,
             'url' => '',
         ]);
-        $request->session()->put(['name' => $request->name, 'email' => $request->email]);
-        return view('mypage');
+
+        $users = DB::table('users')
+        ->get();
+        $id = count($users);
+
+        $request->session()->put(['email' => $request->email, 'id' => $id]);
+        $user = DB::table('users')
+        ->where('id', $id)
+        ->get();
+        return view('/mypage', ['user' => $user]);
     }
     
 

@@ -18,8 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/mypage', 'CallController@call');
-
-Route::post('/call', 'CallController@postCall');
+Route::post('/mypage', 'CallController@postCall');
 
 Route::get('/register', 'LoginController@register');
 Route::post('/register', 'LoginController@postRegister');
