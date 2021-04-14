@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/mypage', 'CallController@call');
+Route::post('/mypage', 'CallController@postCall');
+
+Route::get('/register', 'LoginController@register');
+Route::post('/register', 'LoginController@postRegister');
+
+Route::get('/login', 'LoginController@login');
+Route::post('/login', 'LoginController@postLogin');
