@@ -48,7 +48,7 @@
     <div class="container">
       <div class="column">
         <div class="row">
-          <div class="home"><a href="{{ url('/home') }}">ランダムトーク</a></div>
+          <div class="home"><a href="{{ url('/') }}">ランダムトーク</a></div>
         </div>
       </div>
     </div>
