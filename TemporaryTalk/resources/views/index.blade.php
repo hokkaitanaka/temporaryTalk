@@ -55,36 +55,10 @@
         <p class="title">ランダムトーク</p>
 
         <p>
-        暇な時に誰かとテレビ電話をするサービスです。完全に知らない人との会話もできますが、
-        自分の知り合いの人に限定して電話を掛けることもできます
+          暇な時に誰かとテレビ電話をするサービスです。完全に知らない人との会話もできますが、
+          自分の知り合いの人に限定して電話を掛けることもできます
         </p>
       </div>
     </div>
   </body>
 </html>
-
-<!-- 
-  div{
-    font-size:120%;
-  }
-  <div class="row justify-content-between">
-    <div class="col-4">
-      <a href="{{ url('/home') }}">Event Holder</a>
-    </div>
-    <div class="col-4">
-      <div class="row">
-        <div class="col6">
-          <a href="{{ url('/register_login') }}">Register</a>
-        </div>
-        <div class="col-6">
-          <a href="{{ url('/register_login') }}">Login</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="middle">
-
-  </div>
--->
-
