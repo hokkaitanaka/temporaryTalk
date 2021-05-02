@@ -23,11 +23,11 @@
         margin-left: 00px;
       }
       .register{
-        margin-left: 350px;
+		margin-left: 330px;
       }
 
       .login{
-        margin: 0 0 0 auto;
+		margin-left: 30px;
       }
 
       p{
@@ -49,7 +49,7 @@
         <div class="row">
           <div class="home"><a href="{{ url('/') }}">ランダムトーク</a></div>
           <div class="register"><a href="{{ url('/register') }}">登録</a></div>
-          <div class="register"><a href="{{ url('/login') }}">ログイン</a></div>
+          <div class="login"><a href="{{ url('/login') }}">ログイン</a></div>
         </div>
 
         <p class="title">ランダムトーク</p>
